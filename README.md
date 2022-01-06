@@ -94,11 +94,6 @@ In this program once both producers are done producing, they place a single -2 v
 a -2 it keeps the use_ptr pointed at the -2 so all other consumer threads will also see it. When a consumer thread consumes a -2 it 
 finishes. 
 
-*Ordering Output*
-
-Since thread scheduling is nondeterministic, the previous two solutions do not always produce output in the same order. This program 
-attempts, meaning it is not fully working, to fix that problem using an ordering variable and ordering condition variable. 
-
 
 **Files**
 
@@ -114,12 +109,6 @@ increments.
 Multiple-Consumers: Solves the Fizzbuzz problem using an odd number producer and even number producer, with four consumers to act on the 
 increments.
 
-Ordering-Output: Solves the Fizzbuzz problem by producing output in the same order, where the odd and even producers switch off. 
-
-**Errors, Setbacks, etc.**
-We have been unsuccessful in implementing Ordering-Output. We tried to force the two producer threads to alternate their production thus 
-placing the numbers into the buffer in order. We tried using a lock and 2 condition variables however have been unable to not do so 
-without encoundtering deadlock of some kind. We also have been unable to successfully order the outputs while trying this method. 
 
 
 **Tarball Contents**
